@@ -1,6 +1,6 @@
 services:
-  offlineFirstPock-backend:
-    container_name: OfflineFirstPock-Backend
+  offline-first-pock-backend:
+    container_name: Offline-first-pock-Backend
     restart: always
     build: .
     ports: 
