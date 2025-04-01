@@ -8,7 +8,7 @@ services:
     container_name: mysql-db
     restart: always
     environment:
-      MYSQL_ROOT_PASSWORD: sua_senha_segura
+      MYSQL_ROOT_PASSWORD: ArYMpdXUPxlVZzga91DmRjCtDSLOif3GtIUNahD4HGlxXpW5LHuCe4dcNZ3T4o6e
       MYSQL_DATABASE: seu_banco
       MYSQL_USER: usuario
       MYSQL_PASSWORD: senha_usuario
