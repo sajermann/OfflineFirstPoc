@@ -8,11 +8,7 @@ import { AppModule } from './app.module';
 import { WINSTON_MODULE_NEST_PROVIDER } from 'nest-winston';
 
 async function bootstrap() {
-  console.log(
-    `sajermann`,
-    process.env.DATABASE_USERNAME,
-    process.env.DATABASE_PORT,
-  );
+  console.log(`sajermann`, process.env.DATABASE_URL);
   const app = await NestFactory.create<NestExpressApplication>(AppModule);
   app.useLogger(app.get(WINSTON_MODULE_NEST_PROVIDER));
   app.useStaticAssets(path.join(__dirname, '..', 'public'));
