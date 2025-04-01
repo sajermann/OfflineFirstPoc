@@ -97,6 +97,7 @@ export default defineConfig({
   },
   preview: {
     port: 8080,
+    allowedHosts: true,
   },
   plugins: [react(), tailwindcss(), VitePWA(configPwa)],
   resolve: {

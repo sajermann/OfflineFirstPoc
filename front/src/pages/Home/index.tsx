@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import { InstallPrompt } from '~/components/InstallPrompt';
+import { useNetworkStatus } from '~/hooks/useNetworkStatus';
 
 import { useTranslation } from '~/hooks/useTranslation';
 import { delay } from '~/utils/delay';
 
 export default function Home() {
+  const { isOnline } = useNetworkStatus();
   const { translate } = useTranslation();
   const [newItem, setNewItem] = useState('');
   const [list, setList] = useState(['Bruno', 'Marcia']);
@@ -33,6 +35,7 @@ export default function Home() {
   }
   return (
     <div className="flex flex-col max-w-xl m-auto my-3 p-3 rounded bg-slate-900">
+      {JSON.stringify({ isOnline })}
       <InstallPrompt />
       <h1 className="text-3xl text-white">
         {translate('WELCOME_TO_VITE_BOILERPLATE')} - {translate('TODO_LIST')}

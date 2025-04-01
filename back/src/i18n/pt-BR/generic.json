@@ -1,0 +1,17 @@
+{
+  "NO_ACCOUNT_LINKED": "Sem Conta Conectada",
+  "GITHUB_USER_NOT_FOUND": "Usuário do Github não encontrado",
+  "CURRENT_PASSWORD_INVALID": "Senha atual inválida",
+  "DOCKER_OFFLINE": "Docker não está sendo executado",
+  "HELLO": "Olá {name}",
+  "FORBIDDEN": "Proíbido",
+  "PROJECT_ID_NOT_FOUND": "Id do projeto não encontrado",
+  "UNAUTHORIZED": "Não Autorizado",
+  "NOT_ALLOWED": "Não Permitido",
+  "BRANCH_NOT_FOUND": "Branch não encontrada",
+  "INTERNAL_SERVER_ERROR": "Erro interno do Servidor",
+  "ROUTER_NAME_EXISTS": "Nome da Rota já existe",
+  "ROUTER_NAME_NOT_FOUND": "Nome da Rota não encontrado",
+  "SERVICE_NAME_EXISTS": "Nome do Serviço já existe",
+  "SERVICE_NAME_NOT_FOUND": "Nome do Serviço não encontrado"
+}

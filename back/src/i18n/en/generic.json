@@ -1,0 +1,17 @@
+{
+  "NO_ACCOUNT_LINKED": "No Account Linked",
+  "GITHUB_USER_NOT_FOUND": "Github user not found",
+  "CURRENT_PASSWORD_INVALID": "Current password invalid",
+  "DOCKER_OFFLINE": "Docker is offline",
+  "HELLO": "Hello {name}",
+  "FORBIDDEN": "Forbidden",
+  "PROJECT_ID_NOT_FOUND": "Project id not found",
+  "UNAUTHORIZED": "Unauthorized",
+  "NOT_ALLOWED": "Not Allowed",
+  "BRANCH_NOT_FOUND": "Branch not found",
+  "INTERNAL_SERVER_ERROR": "Internal Server Error",
+  "ROUTER_NAME_EXISTS": "Router Name Exists",
+  "ROUTER_NAME_NOT_FOUND": "Router Name Not Found",
+  "SERVICE_NAME_EXISTS": "Service Name Exists",
+  "SERVICE_NAME_NOT_FOUND": "Service Name Not Found"
+}
