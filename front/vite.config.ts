@@ -94,9 +94,10 @@ const configPwa: Partial<VitePWAOptions> = {
 export default defineConfig({
   server: {
     port: 5000,
+    allowedHosts: true,
   },
   preview: {
-    port: 8080,
+    port: 5001,
     allowedHosts: true,
   },
   plugins: [react(), tailwindcss(), VitePWA(configPwa)],

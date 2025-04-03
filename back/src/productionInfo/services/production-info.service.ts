@@ -13,6 +13,15 @@ export class ProductionInfoService {
     private logService: LogService,
   ) {}
 
+  async find() {
+    const result = await this.productionInfoRepository.find({
+      where: { isActive: true },
+      order: { syncAt: 'DESC' },
+    });
+    console.log({ result });
+    return result;
+  }
+
   async create(productionInfoToCreate: DeepPartial<ProductionInfoEntity>) {
     const exist = await this.productionInfoRepository.find({
       where: { id: productionInfoToCreate.id },
@@ -41,6 +50,7 @@ export class ProductionInfoService {
       if (!exist.length) {
         toSave.push({
           ...item,
+          createdAt: new Date(item.createdAt).getTime(),
           updatedAt: new Date().getTime(),
           syncAt: new Date().getTime(),
         });
@@ -51,6 +61,15 @@ export class ProductionInfoService {
       throw new Error(EGenericError.ID_EXISTS);
     }
 
-    return await this.productionInfoRepository.createMany(toSave);
+    return (await this.productionInfoRepository.createMany(toSave))
+      .sort((a, b) => {
+        return a.syncAt > b.syncAt ? 1 : -1;
+      })
+      .map((item) => ({
+        ...item,
+        createdAt: new Date(item.createdAt),
+        syncAt: new Date(item.syncAt),
+        updatedAt: new Date(item.updatedAt),
+      }));
   }
 }

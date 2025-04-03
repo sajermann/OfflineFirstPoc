@@ -1,7 +1,9 @@
 import { useEffect, useState } from 'react';
 import { usePWAInstall } from 'react-use-pwa-install';
+import { useTranslation } from '~/hooks/useTranslation';
 
 export const InstallPrompt = () => {
+  const { translate } = useTranslation();
   const [isVisible, setIsVisible] = useState(false);
   const install = usePWAInstall();
 
@@ -38,13 +40,13 @@ export const InstallPrompt = () => {
 
   return (
     <div className="bg-zinc-900 fixed bottom-0 right-0 m-4 p-4  shadow-lg rounded-lg">
-      <div className="flex items-center gap-4">
-        <span>📲 Instalar nosso app para melhor experiência!</span>
+      <div className="flex items-center gap-4 flex-wrap justify-center">
+        <span className="text-center">📲 {translate('INSTALL_MESSAGE')}</span>
         <button
           onClick={handleInstall}
           className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
         >
-          Instalar Agora
+          {translate('INSTALL_NOW')}
         </button>
       </div>
     </div>

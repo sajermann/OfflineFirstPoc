@@ -12,7 +12,14 @@ export const config = {
       return typeof value === 'number' ? value : null;
     },
     from(value: string | null): Date {
-      return typeof value === 'string' || 'number' ? new Date(value) : null;
+      if (typeof value === 'string') {
+        return new Date(Number(value));
+      }
+
+      if (typeof value === 'number') {
+        return new Date(value);
+      }
+      return null;
     },
   },
 } as any;

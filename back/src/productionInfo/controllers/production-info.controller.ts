@@ -26,18 +26,15 @@ export class ProductionInfoController {
 
   // @UseGuards(AuthGuard)
   // // @Roles(['analyst'])
-  // @Get('')
-  // async read(@Query() data: { deployId: number }, @Res() response: Response) {
-  //   try {
-  //     console.log({ data });
-  //     response.send(
-  //       await this.productionInfoService.findByDeployId(data.deployId),
-  //     );
-  //   } catch (e) {
-  //     console.log({ e });
-  //     ErrorManager.exec(e, this.translationService);
-  //   }
-  // }
+  @Get('')
+  async read(@Res() response: Response) {
+    try {
+      response.send(await this.productionInfoService.find());
+    } catch (e) {
+      console.log({ e });
+      ErrorManager.exec(e, this.translationService);
+    }
+  }
 
   // @UseGuards(AuthGuard)
   // @Roles(['analyst'])

@@ -1,12 +1,21 @@
 {
-	"translations": {
-		"WELCOME_TO_VITE_BOILERPLATE": "Welcome to Vite Boilerplate",
-		"TODO_LIST": "TODO List",
-		"ADDED_ITEMS": "Added Items",
-		"ADD": "Add",
-		"ADDING...": "Adding...",
-		"NEW_ITEM":"New Item",
-		"REMOVE":"Remove",
-		"REMOVING...": "Removing..."
-	}
+  "translations": {
+    "SYNC_DATA": "Sync data",
+    "INSTALL_NOW": "Install Now",
+    "INSTALL_MESSAGE": "Install our app for a better experience!",
+    "SYNC_AT": "Sync Date",
+    "CREATED_AT": "Create Date",
+    "FAVORITE_FOOD": "Favorite food",
+    "NAME": "Name",
+    "YOU_ARE_OFFLINE": "You are offline",
+    "YOU_ARE_ONLINE": "You are online",
+    "WELCOME_TO_VITE_BOILERPLATE": "Welcome to Vite Boilerplate",
+    "TODO_LIST": "TODO List",
+    "ADDED_ITEMS": "Added Items",
+    "ADD": "Add",
+    "ADDING...": "Adding...",
+    "NEW_ITEM": "New Item",
+    "REMOVE": "Remove",
+    "REMOVING...": "Removing..."
+  }
 }
