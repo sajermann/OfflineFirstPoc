@@ -5,6 +5,8 @@ on:
   # Runs on pushes targeting the default branch
   push:
     branches: ["main"]
+    paths:
+      - 'front/**'  # Só executa quando houver mudanças na pasta front
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -21,10 +23,12 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-
   # Build job
   build:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./front  # Define o diretório de trabalho padrão para os comandos run
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -49,10 +53,12 @@ jobs:
       - name: Build with Jekyll
         uses: actions/jekyll-build-pages@v1
         with:
-          source: ./dist
+          source: ./front/dist  # Caminho para a pasta dist dentro do diretório front
           destination: ./_site
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./_site  # Especifica o caminho do artefato a ser enviado
 
   # Deployment job
   deploy:
