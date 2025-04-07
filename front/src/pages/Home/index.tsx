@@ -5,7 +5,7 @@ import { useData } from '~/hooks/useData';
 
 export default function Home() {
   const { list, listToSync, setListToSync } = useData();
-
+  console.log({ list, listToSync, setListToSync });
   return (
     <div className="flex flex-col max-w-2xl m-auto my-3 p-3 rounded dark:bg-slate-900 ">
       <InstallPrompt />
