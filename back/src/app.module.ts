@@ -27,11 +27,11 @@ import { ProductionInfoModule } from './productionInfo/production-info.module';
       useFactory: (configService: ConfigService) => ({
         type: 'mysql',
         authPlugin: 'sha256_password',
-        // url: configService.get('DATABASE_URL'),
-        host: configService.get('DATABASE_HOST'),
-        port: configService.get('DATABASE_PORT'),
-        username: configService.get('DATABASE_USERNAME'),
-        password: configService.get('DATABASE_PASSWORD'),
+        url: configService.get('DATABASE_URL'),
+        // host: configService.get('DATABASE_HOST'),
+        // port: configService.get('DATABASE_PORT'),
+        // username: configService.get('DATABASE_USERNAME'),
+        // password: configService.get('DATABASE_PASSWORD'),
         database: configService.get('DATABASE_NAME'),
         autoLoadEntities: true,
         synchronize: true, // TODO: deixaar apenas em desenvolvimento
@@ -81,6 +81,6 @@ export class AppModule implements OnApplicationBootstrap {
   constructor(private readonly userService: UserService) {}
 
   async onApplicationBootstrap() {
-    await this.userService.seedAdminUser();
+    // await this.userService.seedAdminUser();
   }
 }
