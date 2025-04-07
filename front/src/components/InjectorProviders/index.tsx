@@ -1,5 +1,5 @@
 import { ReactNode } from 'react';
-import { BrowserRouter } from 'react-router';
+import { HashRouter } from 'react-router';
 import { DarkModeProvider } from '~/hooks/useDarkMode';
 import { TestProvider } from '~/hooks/useTest';
 import { Header } from '../Header';
@@ -38,7 +38,7 @@ import { ToastContainer } from 'react-toastify';
 
 export function InjectorProviders({ children }: { children: ReactNode }) {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <DarkModeProvider>
         <ToastContainer className="p-1 mt-10" />
         <TestProvider>
@@ -46,6 +46,6 @@ export function InjectorProviders({ children }: { children: ReactNode }) {
           {children}
         </TestProvider>
       </DarkModeProvider>
-    </BrowserRouter>
+    </HashRouter>
   );
 }

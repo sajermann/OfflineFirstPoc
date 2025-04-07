@@ -1,0 +1,1 @@
+if('serviceWorker' in navigator) navigator.serviceWorker.register('/OfflineFirstPoc/dev-sw.js?dev-sw', { scope: '/OfflineFirstPoc/', type: 'classic' })
