@@ -8,19 +8,31 @@ export function Table({ data }: { data: ProductionInfo[] }) {
     <table className="w-full">
       <thead>
         <tr>
-          <th>{translate('NAME')}</th>
-          <th>{translate('FAVORITE_FOOD')}</th>
-          <th>{translate('CREATED_AT')}</th>
-          <th>{translate('SYNC_AT')}</th>
+          <th className="text-center whitespace-nowrap">{translate('NAME')}</th>
+          <th className="text-center whitespace-nowrap">
+            {translate('FAVORITE_FOOD')}
+          </th>
+          <th className="text-center whitespace-nowrap">
+            {translate('CREATED_AT')}
+          </th>
+          <th className="text-center whitespace-nowrap">
+            {translate('SYNC_AT')}
+          </th>
         </tr>
       </thead>
       <tbody>
         {data.map(item => (
           <tr key={item.id}>
-            <td className="text-center">{item.name}</td>
-            <td className="text-center">{item.favoriteFood}</td>
-            <td className="text-center">{formatDateAndHour(item.createdAt)}</td>
-            <td className="text-center">{formatDateAndHour(item.syncAt)}</td>
+            <td className="text-center whitespace-nowrap">{item.name}</td>
+            <td className="text-center whitespace-nowrap">
+              {item.favoriteFood}
+            </td>
+            <td className="text-center whitespace-nowrap">
+              {formatDateAndHour(item.createdAt)}
+            </td>
+            <td className="text-center whitespace-nowrap">
+              {formatDateAndHour(item.syncAt)}
+            </td>
           </tr>
         ))}
       </tbody>

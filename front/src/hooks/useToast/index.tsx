@@ -38,9 +38,10 @@ export function useToast() {
       ),
       {
         ...toastOptions,
+        // className:
+        //   '!bg-transparent backdrop-blur-md dark:!text-white !text-black h-full w-full border !rounded-lg overflow-hidden m-1 z-[999999999]',
         className:
-          'bg-transparent backdrop-blur-md dark:text-white text-black h-full w-full border rounded-lg overflow-hidden m-1 z-[999999999]',
-        // bodyClassName: 'h-full w-full p-0',
+          '!bg-transparent backdrop-blur-md dark:!text-white !text-black border !rounded-lg my-6',
         autoClose: options?.autoClose || 3000,
         closeButton: false,
         type: options?.type,

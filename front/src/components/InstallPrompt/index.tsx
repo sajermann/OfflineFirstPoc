@@ -39,7 +39,7 @@ export const InstallPrompt = () => {
   if (!isVisible) return null;
 
   return (
-    <div className="bg-zinc-900 fixed bottom-0 right-0 m-4 p-4  shadow-lg rounded-lg">
+    <div className="bg-zinc-900 text-white fixed bottom-0 right-0 m-5 p-4 shadow-lg rounded-lg">
       <div className="flex items-center gap-4 flex-wrap justify-center">
         <span className="text-center">📲 {translate('INSTALL_MESSAGE')}</span>
         <button
