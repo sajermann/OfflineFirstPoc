@@ -19,7 +19,7 @@ const configPwa: Partial<VitePWAOptions> = {
     short_name: 'OFP',
     description: 'Aplicativo Offline para Jonas Júnior',
     theme_color: '#ffffff',
-    start_url: '/',
+    start_url: '/OfflineFirstPoc/',
     icons: [
       {
         src: 'logo-192X192.png',
