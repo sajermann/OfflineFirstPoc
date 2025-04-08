@@ -1,15 +1,29 @@
+# services:
+#   offline-first-pock-backend:
+#     container_name: Offline-first-pock-Backend
+#     restart: always
+#     build: .
+#     networks:
+#       - fast-deploy
+#     ports: 
+#       - 3000:3000
+#     volumes:
+#       - /var/run/docker.sock:/var/run/docker.sock
+# networks:
+#   fast-deploy:
+#     driver: bridge
+#     name: fast-deploy
+
 services:
   offline-first-pock-backend:
     container_name: Offline-first-pock-Backend
     restart: always
     build: .
-    networks:
-      - fast-deploy
-    ports: 
-      - 3000:3000
+    # Exponha apenas internamente, não publicamente
+    expose: 
+      - 3000
+    # Ou use esta configuração para limitar a porta apenas à rede interna
+    # ports:
+    #   - 127.0.0.1:3000:3000
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
-networks:
-  fast-deploy:
-    driver: bridge
-    name: fast-deploy
