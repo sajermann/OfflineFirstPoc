@@ -27,7 +27,7 @@ services:
     #   - 127.0.0.1:3000:3000
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.backend.rule=Host(`potato.sajermann.com`)"
+      - "traefik.http.routers.backend.rule=Host(`offline-first-poc-back.sajermann.com`)"
       - "traefik.http.routers.backend.entrypoints=https"
       - "traefik.http.routers.backend.tls.certresolver=letsencrypt"
       - "traefik.http.services.backend.loadbalancer.server.port=3000"
