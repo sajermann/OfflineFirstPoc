@@ -20,10 +20,18 @@ services:
     restart: always
     build: .
     # Exponha apenas internamente, não publicamente
-    # expose: 
-    #   - 3000
+    expose: 
+      - 3000
     # Ou use esta configuração para limitar a porta apenas à rede interna
-    ports:
-      - 127.0.0.1:3000:3000
+    # ports:
+    #   - 127.0.0.1:3000:3000
+        expose: 
+      - 3000
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.backend.rule=Host(`potato.sajermann.com`)"
+      - "traefik.http.routers.backend.entrypoints=https"
+      - "traefik.http.routers.backend.tls.certresolver=letsencrypt"
+      - "traefik.http.services.backend.loadbalancer.server.port=3000"
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
